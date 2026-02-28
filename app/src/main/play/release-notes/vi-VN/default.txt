@@ -1,0 +1,6 @@
+Phiên bản đầu tiên:
+• Chế độ đấu AI: Dễ, Trung bình, Khó
+• 2 Người chơi trên cùng thiết bị
+• Kích thước bàn cờ: 3×3, 5×5, 7×7
+• Giao diện dark mode cao cấp
+• Animation vật lý và phản hồi haptic

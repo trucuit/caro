@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Caro</string>
+    <string name="privacy_policy_title">Privacy Policy</string>
+    <string name="privacy_policy_summary">Tic-Tac-Toe Caro does not collect personal data.
+
+Game data and settings are stored locally on your device.
+
+The app currently does not include third-party analytics, ads, or tracking SDKs.
+
+If you have questions, contact: tructt.dev@gmail.com</string>
+    <string name="open_full_policy">Open full policy</string>
+    <string name="close">Close</string>
+    <string name="privacy_policy_url"></string>
+</resources>

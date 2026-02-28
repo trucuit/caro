@@ -1,0 +1,20 @@
+Tic-Tac-Toe Caro — a beautifully designed, dark-themed board game with premium gaming aesthetics.
+
+🎮 FEATURES
+• VS AI — Challenge Easy, Medium, or Hard AI opponents
+• 2 Players — Local multiplayer pass-and-play mode
+• Multiple Board Sizes — Classic 3×3, strategic 5×5, and challenging 7×7
+• 5-in-a-Row — Caro/Gomoku rules on larger boards
+
+🎨 PREMIUM DESIGN
+• Dark mode OLED-optimized interface
+• Neumorphic game board with neon glow effects
+• Spring physics animations and haptic feedback
+• Gaming typography (Russo One + Chakra Petch)
+
+🧠 SMART AI
+• Easy mode for casual play
+• Medium mode with strategic blocking
+• Hard mode with minimax algorithm — can you beat it?
+
+No ads. No data collection. Just pure gaming.

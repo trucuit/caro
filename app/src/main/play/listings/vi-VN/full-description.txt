@@ -1,0 +1,20 @@
+Cờ Caro Tic-Tac-Toe — game cờ dark mode với thiết kế cao cấp, hiệu ứng neon và animation mượt mà.
+
+🎮 TÍNH NĂNG
+• Đấu AI — 3 mức độ: Dễ, Trung bình, Khó
+• 2 Người chơi — Chế độ multiplayer cùng thiết bị
+• Nhiều kích thước bàn cờ — 3×3 kinh điển, 5×5 chiến thuật, 7×7 thử thách
+• 5 ô liên tiếp — Luật Caro/Gomoku trên bàn cờ lớn
+
+🎨 THIẾT KẾ CAO CẤP
+• Giao diện tối tối ưu cho màn hình OLED
+• Bàn cờ neumorphic với hiệu ứng neon
+• Animation vật lý spring và phản hồi haptic
+• Font chữ gaming (Russo One + Chakra Petch)
+
+🧠 AI THÔNG MINH
+• Chế độ Dễ cho chơi giải trí
+• Chế độ Trung bình với chiến thuật chặn
+• Chế độ Khó dùng thuật toán minimax — bạn có thắng được không?
+
+Không quảng cáo. Không thu thập dữ liệu. Chỉ có game thuần túy.
