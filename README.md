@@ -1,6 +1,12 @@
-# Caro
+# Caro Game Android
 
 Game Tic-Tac-Toe & Caro cho Android với giao diện dark theme cao cấp, AI thông minh, và nhiều kích thước bàn cờ.
+
+## 📸 Screenshots
+
+| Menu | Gameplay | Mid-game |
+|------|----------|----------|
+| ![Menu](store-assets/screenshot-01-menu.png) | ![Gameplay](store-assets/screenshot-02-gameplay.png) | ![Mid-game](store-assets/screenshot-03-midgame.png) |
 
 ## 📋 Tính năng
 
