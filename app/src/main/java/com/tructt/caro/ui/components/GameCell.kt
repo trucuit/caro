@@ -37,10 +37,10 @@ import androidx.compose.ui.unit.dp
 import com.tructt.caro.domain.CellState
 import com.tructt.caro.ui.theme.BlueAccent
 import com.tructt.caro.ui.theme.BlueCellBg
-import com.tructt.caro.ui.theme.CellBorder
+import com.tructt.caro.ui.theme.BgCell
+import com.tructt.caro.ui.theme.BorderSubtle
 import com.tructt.caro.ui.theme.CoralAccent
 import com.tructt.caro.ui.theme.CoralCellBg
-import com.tructt.caro.ui.theme.DarkSurface
 
 /**
  * BRD 2.2: Neumorphic / "Phygital" cell with subtle 3D depth.
@@ -56,20 +56,20 @@ fun GameCell(
     isWinningCell: Boolean = false
 ) {
     val view = LocalView.current
-    val shape = RoundedCornerShape(12.dp)
+    val shape = RoundedCornerShape(16.dp)
 
     val bgColor = when {
         cellState == CellState.X -> BlueCellBg
         cellState == CellState.O -> CoralCellBg
-        else -> DarkSurface
+        else -> BgCell
     }
 
     val borderColor = when {
         isWinningCell && cellState == CellState.X -> BlueAccent
         isWinningCell && cellState == CellState.O -> CoralAccent
-        cellState == CellState.X -> BlueAccent.copy(alpha = 0.4f)
-        cellState == CellState.O -> CoralAccent.copy(alpha = 0.4f)
-        else -> CellBorder.copy(alpha = 0.5f)
+        cellState == CellState.X -> BlueAccent.copy(alpha = 0.5f)
+        cellState == CellState.O -> CoralAccent.copy(alpha = 0.5f)
+        else -> BorderSubtle
     }
 
     // BRD 2.3: Spring physics depress — scale down to 95%

@@ -58,5 +58,6 @@ data class GameState(
     val gameMode: GameMode = GameMode.VS_AI,
     val aiDifficulty: AiDifficulty = AiDifficulty.HARD,
     val boardConfig: BoardConfig = BoardConfig(),
-    val currentSymbol: CellState = CellState.X  // Tracks whose turn in local multiplayer
+    val currentSymbol: CellState = CellState.X,  // Tracks whose turn in local multiplayer
+    val winningCells: List<Int> = emptyList()     // Indices of winning line
 )

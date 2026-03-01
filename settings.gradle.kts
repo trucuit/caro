@@ -1,3 +1,5 @@
+gradle.lifecycle.beforeProject { layout.buildDirectory = file("/tmp/caro-build/${project.name}") }
+
 pluginManagement {
     repositories {
         google()

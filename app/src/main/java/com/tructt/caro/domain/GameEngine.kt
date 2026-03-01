@@ -103,9 +103,10 @@ object GameEngine {
 
     private fun evaluateBoard(state: GameState, board: List<CellState>, justPlaced: CellState): GameState {
         val config = state.boardConfig
-        if (hasWon(board, justPlaced, config)) {
+        val winLine = getWinningLine(board, justPlaced, config)
+        if (winLine != null) {
             val phase = if (justPlaced == CellState.X) GamePhase.WON else GamePhase.LOST
-            return state.copy(board = board, phase = phase)
+            return state.copy(board = board, phase = phase, winningCells = winLine)
         }
         if (board.none { it == CellState.EMPTY }) {
             return state.copy(board = board, phase = GamePhase.DRAW)
@@ -116,10 +117,11 @@ object GameEngine {
 
     private fun evaluateLocalBoard(state: GameState, board: List<CellState>, justPlaced: CellState): GameState {
         val config = state.boardConfig
-        if (hasWon(board, justPlaced, config)) {
+        val winLine = getWinningLine(board, justPlaced, config)
+        if (winLine != null) {
             // In local multiplayer, X winning = WON, O winning = LOST (from X's perspective)
             val phase = if (justPlaced == CellState.X) GamePhase.WON else GamePhase.LOST
-            return state.copy(board = board, phase = phase)
+            return state.copy(board = board, phase = phase, winningCells = winLine)
         }
         if (board.none { it == CellState.EMPTY }) {
             return state.copy(board = board, phase = GamePhase.DRAW)

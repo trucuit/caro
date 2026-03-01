@@ -20,10 +20,6 @@ class GameViewModel : ViewModel() {
     private val _state = MutableStateFlow(GameState())
     val state: StateFlow<GameState> = _state.asStateFlow()
 
-    // Whether we're showing the menu or playing
-    private val _showMenu = MutableStateFlow(true)
-    val showMenu: StateFlow<Boolean> = _showMenu.asStateFlow()
-
     fun startGame(
         mode: GameMode,
         difficulty: AiDifficulty = AiDifficulty.HARD,
@@ -32,7 +28,6 @@ class GameViewModel : ViewModel() {
         val winLength = if (boardSize <= 3) 3 else 5
         val config = BoardConfig(size = boardSize, winLength = winLength)
 
-        _showMenu.value = false
         viewModelScope.launch {
             _state.value = GameState(
                 board = List(config.totalCells) { CellState.EMPTY },
@@ -44,10 +39,6 @@ class GameViewModel : ViewModel() {
             delay(800) // Simulate loading
             _state.value = _state.value.copy(phase = GamePhase.PLAYER_TURN)
         }
-    }
-
-    fun goToMenu() {
-        _showMenu.value = true
     }
 
     fun onCellClick(index: Int) {
@@ -92,8 +83,8 @@ class GameViewModel : ViewModel() {
     }
 
     fun onConfirmLeave() {
-        // BRD 3.4: leaving a match counts as a loss
-        _state.value = _state.value.copy(phase = GamePhase.LOST, showLeaveDialog = false)
+        // BRD 3.4: leaving a match counts as a loss → CANCELLED
+        _state.value = _state.value.copy(phase = GamePhase.CANCELLED, showLeaveDialog = false)
     }
 
     fun onCancelLeave() {

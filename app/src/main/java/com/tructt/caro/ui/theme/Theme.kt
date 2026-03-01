@@ -11,64 +11,92 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.tructt.caro.R
 
-// UI UX Pro Max: Gaming Bold typography
-// Heading: Russo One (gaming/esports impact)
-// Body: Chakra Petch (techy, readable)
-val RussoOne = FontFamily(
-    Font(R.font.russo_one, FontWeight.Normal)
+// ─── Font Families (matching Pencil design) ───
+
+// Headings: Space Grotesk (variable font, supports 300–700)
+val SpaceGrotesk = FontFamily(
+    Font(R.font.space_grotesk_regular, FontWeight.Normal),
+    Font(R.font.space_grotesk_regular, FontWeight.Bold),
+    Font(R.font.space_grotesk_regular, FontWeight.ExtraBold),
 )
 
-val ChakraPetch = FontFamily(
-    Font(R.font.chakra_petch_regular, FontWeight.Normal),
-    Font(R.font.chakra_petch_medium, FontWeight.Medium),
-    Font(R.font.chakra_petch_bold, FontWeight.Bold)
+// Body: Manrope (variable font, supports 200–800)
+val Manrope = FontFamily(
+    Font(R.font.manrope_regular, FontWeight.Normal),
+    Font(R.font.manrope_regular, FontWeight.Medium),
+    Font(R.font.manrope_regular, FontWeight.SemiBold),
 )
+
+// Mono: Space Mono (timers, counters)
+val SpaceMono = FontFamily(
+    Font(R.font.space_mono_regular, FontWeight.Normal),
+    Font(R.font.space_mono_bold, FontWeight.Bold)
+)
+
+// Legacy compat aliases
+val RussoOne = SpaceGrotesk
+val ChakraPetch = Manrope
+
+// ─── Typography ───
 
 private val GameTypography = Typography(
+    // Screen titles: "VICTORY!", "DEFEAT", "DRAW!"
     displayLarge = TextStyle(
-        fontFamily = RussoOne,
-        fontWeight = FontWeight.Normal,
-        fontSize = 36.sp,
-        letterSpacing = 1.sp
-    ),
-    headlineLarge = TextStyle(
-        fontFamily = RussoOne,
-        fontWeight = FontWeight.Normal,
+        fontFamily = SpaceGrotesk,
+        fontWeight = FontWeight.ExtraBold,
         fontSize = 28.sp,
-        letterSpacing = 0.5.sp
+        letterSpacing = 3.sp
     ),
+    // Section headers: "GAME MODE", "DIFFICULTY"
+    headlineLarge = TextStyle(
+        fontFamily = SpaceGrotesk,
+        fontWeight = FontWeight.ExtraBold,
+        fontSize = 22.sp,
+        letterSpacing = 2.sp
+    ),
+    // Sub-headers: "OPPONENT'S TURN", "CANCELLED"
     headlineMedium = TextStyle(
-        fontFamily = RussoOne,
-        fontWeight = FontWeight.Normal,
-        fontSize = 22.sp
+        fontFamily = SpaceGrotesk,
+        fontWeight = FontWeight.ExtraBold,
+        fontSize = 20.sp,
+        letterSpacing = 3.sp
     ),
+    // Button text: "PLAY AGAIN", "GO BACK"
     titleLarge = TextStyle(
-        fontFamily = ChakraPetch,
+        fontFamily = SpaceGrotesk,
         fontWeight = FontWeight.Bold,
-        fontSize = 18.sp
+        fontSize = 16.sp,
+        letterSpacing = 2.sp
     ),
+    // Body: descriptions, dialog text
     bodyLarge = TextStyle(
-        fontFamily = ChakraPetch,
+        fontFamily = Manrope,
         fontWeight = FontWeight.Normal,
-        fontSize = 16.sp
+        fontSize = 14.sp,
+        lineHeight = 21.sp
     ),
+    // Smaller body text
     bodyMedium = TextStyle(
-        fontFamily = ChakraPetch,
-        fontWeight = FontWeight.Normal,
-        fontSize = 14.sp
-    ),
-    labelLarge = TextStyle(
-        fontFamily = ChakraPetch,
-        fontWeight = FontWeight.Medium,
-        fontSize = 15.sp,
-        letterSpacing = 0.5.sp
-    ),
-    labelMedium = TextStyle(
-        fontFamily = ChakraPetch,
+        fontFamily = Manrope,
         fontWeight = FontWeight.Medium,
         fontSize = 13.sp
+    ),
+    // Button labels: "LEAVE MATCH", "MAIN MENU"
+    labelLarge = TextStyle(
+        fontFamily = SpaceGrotesk,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 13.sp,
+        letterSpacing = 1.sp
+    ),
+    // Chip/tag labels
+    labelMedium = TextStyle(
+        fontFamily = Manrope,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 12.sp
     )
 )
+
+// ─── Color Scheme ───
 
 private val DarkColorScheme = darkColorScheme(
     primary = BlueAccent,

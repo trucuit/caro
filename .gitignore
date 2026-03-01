@@ -131,3 +131,26 @@ Temporary Items
 # Release keystore
 *.keystore
 *.jks
+
+node_modules/
+.pnpm-store/
+.npm/
+dist/
+.build/
+.next/
+.astro/
+.cache/
+coverage/
+android/.gradle/
+android/app/build/
+ios/build/
+DerivedData/
+*.ipa
+*.xcarchive
+.env
+.env.local
+.env.*.local
+venv/
+.venv/
+__pycache__/
+*.pyc
