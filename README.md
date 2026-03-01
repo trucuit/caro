@@ -1,66 +1,91 @@
-# caro
+# Caro
 
-Updated on 2026-03-01.
+Game Tic-Tac-Toe & Caro cho Android với giao diện dark theme cao cấp, AI thông minh, và nhiều kích thước bàn cờ.
 
-## Overview
+## 📋 Tính năng
 
-A beautifully designed, dark-themed Tic-Tac-Toe & Caro board game for Android with premium gaming aesthetics, smart AI opponents, and multiple board sizes.
+- Chơi Tic-Tac-Toe (3x3) và Caro (5x5, 7x7,...)
+- AI đối thủ với nhiều mức độ khó
+- Dark theme với hiệu ứng gaming đẹp mắt
+- Hỗ trợ chơi 2 người
+- Lưu lịch sử trận đấu
+- Hỗ trợ Google Play Store
 
-## Tech Stack
+## 🛠️ Công nghệ
 
-- Not explicitly detected
+- **Language:** Kotlin
+- **Platform:** Android
+- **Build:** Gradle (Kotlin DSL)
+- **Min SDK:** Android 7.0 (API 24)
 
-Detected source languages:
-- Kotlin: 24 files
-- Markdown: 6 files
-- Shell: 1 files
-- HTML: 1 files
+## ⚙️ Cài đặt
 
-## Project Structure
+### Yêu cầu
 
-```text
-caro/
-- .gitignore
-- app/
-- BRD.md
-- build.gradle.kts
-- build_debug.sh
-- caro-release.keystore
-- docs/
-- figma/
-- gradle/
-- gradle.properties
-- gradlew
-- gradlew.bat
-- keystore.properties
-- keystore.properties.example
-- pencil-new.pen
-- PLAY_STORE_POLICY_CHECKLIST_2026-02-28.md
-- README.md
-- settings.gradle.kts
-- store-assets/
+- Android Studio Hedgehog+
+- JDK 17
+- Android SDK 34
+
+### 1. Clone & cài đặt
+
+```bash
+git clone https://github.com/trucuit/caro.git
+cd caro
 ```
 
-## Setup and Run
+### 2. Cấu hình Signing (cho Release build)
 
-- Add project-specific setup commands here.
+Tạo file `keystore.properties` từ template:
 
-## Repository
+```bash
+cp keystore.properties.example keystore.properties
+```
 
-- Git branch: main
-- Working tree clean: Yes
-- Remotes:
-- github	https://github.com/trucuit/caro.git (fetch)
-- github	https://github.com/trucuit/caro.git (push)
-- origin	https://github.com/trucuit/caro.git (fetch)
-- origin	https://github.com/trucuit/caro.git (push)
+Cập nhật giá trị trong `keystore.properties`:
 
-## Notes
+| Key | Mô tả |
+|-----|--------|
+| `storeFile` | Đường dẫn đến file keystore (.jks) |
+| `storePassword` | Mật khẩu keystore |
+| `keyAlias` | Alias của signing key |
+| `keyPassword` | Mật khẩu key |
 
-- This README was generated from current source structure and build metadata.
-- Update commands and architecture details if project behavior changes.
+### 3. Build & Run
 
-## Author
+```bash
+# Debug build
+./gradlew assembleDebug
 
-- trung truc
-- GitHub: https://github.com/trucuit
+# Release build (cần keystore)
+./gradlew assembleRelease
+
+# Hoặc chạy trực tiếp từ Android Studio
+```
+
+### 4. Deploy Google Play
+
+Xem [PLAY_STORE_POLICY_CHECKLIST](PLAY_STORE_POLICY_CHECKLIST_2026-02-28.md).
+
+## 📁 Cấu trúc
+
+```
+caro/
+├── app/              # Main app module (Kotlin)
+├── docs/             # Documentation
+├── figma/            # Design assets
+├── store-assets/     # Play Store screenshots & graphics
+├── gradle/           # Gradle wrapper
+└── build.gradle.kts  # Root build config
+```
+
+## 🔒 Bảo mật
+
+> **⚠️ QUAN TRỌNG:** Không commit `keystore.properties` (chứa signing password) vào Git. File đã được thêm vào `.gitignore`. Chỉ commit `.example` file.
+
+## 📄 License
+
+All rights reserved.
+
+## 👤 Author
+
+**trung truc** — [GitHub](https://github.com/trucuit)
